@@ -16,6 +16,66 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
+                to="/addArticles"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                Add Articles
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/allArticles"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                All Articles
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/subscription"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                Subscription
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/dashboard"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                Dashboard
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/myArticle"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                My Article
+            </NavLink>
+        </li> 
+        <li>
+            <NavLink
+                to="/premiumArticle"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                Premium Article
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
