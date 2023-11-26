@@ -1,11 +1,23 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Google from '../../assets/icon/google.png'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 
 const Login = () => {
+    //typewriter
+    const [text] = useTypewriter({
+        words: ['NewsFlash'],
+        loop: 1,
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+      })
+
     const handleLogin = e => {
         e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
     }
     return (
         <div>
@@ -15,8 +27,10 @@ const Login = () => {
             <div className="hero min-h-screen">
                 <div className="flex-col max-w-2xl md:flex-row-reverse">
                     <div className="">
-                        <form onSubmit={handleLogin} className="card-body">
-                            <h1 className="py-8 text-2xl font-bold pr-24">Sign in to NewsFlash</h1>
+                        <form onSubmit={handleLogin} className="card-body w-96">
+                            <h1 className="py-8 text-2xl font-bold">Sign in to  
+                                <span className="font-bold text-[#dc0003]"> {text}</span><Cursor/>
+                                </h1>
                             <div className="form-control">
                                 <button className="btn rounded-3xl bg-black text-white">
                                     <img className="h-8" src={Google} alt="" />

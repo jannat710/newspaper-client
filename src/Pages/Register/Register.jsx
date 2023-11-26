@@ -2,9 +2,16 @@ import { Helmet } from "react-helmet-async";
 import Google from '../../assets/icon/google.png'
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 
 const Register = () => {
+        //typewriter
+        const [text] = useTypewriter({
+            words: ['NewsFlash'],
+            loop: 1,
+            onLoopDone: () => console.log(`loop completed after 3 runs.`)
+          })
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
@@ -18,8 +25,10 @@ console.log(data)
             <div className="hero min-h-screen">
                 <div className="flex-col max-w-2xl md:flex-row-reverse">
                     <div className="">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                        <h1 className="py-8 text-2xl font-bold pr-24">Sign Up to NewsFlash</h1>
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body w-96">
+                        <h1 className="py-8 text-2xl font-bold">Sign up to  
+                                <span className="font-bold text-[#dc0003]"> {text}</span><Cursor/>
+                                </h1>
                             <div className="form-control">
                                 <button className="btn rounded-3xl bg-black text-white">
                                     <img className="h-8" src={Google} alt="" />
