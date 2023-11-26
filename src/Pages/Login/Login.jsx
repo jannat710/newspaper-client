@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Google from '../../assets/icon/google.png'
 
 
 const Login = () => {
-    const handleLogin = e =>{
+    const handleLogin = e => {
         e.preventDefault();
     }
     return (
@@ -11,34 +12,40 @@ const Login = () => {
             <Helmet>
                 <title>NewsFlash | Login</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col md:flex-row-reverse">
-                    <div className="text-center md:w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div>
-                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+            <div className="hero min-h-screen">
+                <div className="flex-col max-w-2xl md:flex-row-reverse">
+                    <div className="">
                         <form onSubmit={handleLogin} className="card-body">
+                            <h1 className="py-8 text-2xl font-bold pr-24">Sign in to NewsFlash</h1>
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                <button className="btn rounded-3xl bg-black text-white">
+                                    <img className="h-8" src={Google} alt="" />
+                                    Sign in with Google
+                                </button>
+
+                                <p className="text-center text-sm pt-5 divider text-[#6e6d7a]">or sign with email</p>
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-bold">Email</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="Enter your email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-bold">Password</span>
+                                </label>
+                                <input type="password" name="password" placeholder="Enter your password" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
-                                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn rounded-3xl bg-black text-white" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className='px-6'><small>New Here? <Link to="/register">Create an account</Link> </small></p>
+                        <p className='text-center pb-5'><small className="text-sm text-[#6e6d7a]">Do not have an account? <Link className="underline font-bold" to="/register">Register</Link> </small></p>
+
                     </div>
                 </div>
-                
+
             </div>
 
         </div>
