@@ -7,12 +7,14 @@ import AddArticles from "../Pages/AddArticles/AddArticles";
 import AllArticles from "../Pages/AllArticles/AllArticles";
 import Dashboard from "../Layout/MainLayout/Dashboard";
 import MyArticle from "../Pages/Dashboard/MyArticle/MyArticle";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
