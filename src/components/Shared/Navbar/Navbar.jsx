@@ -93,24 +93,7 @@ const Navbar = () => {
                 Register
             </NavLink>
         </li>
-        {
-            user ? <>
-                {/* <span>{user?.displayName}</span>
-            <img className="h-6 w-6 rounded-full" src={user?.photoURL} alt="" /> */}
-                <button onClick={handleLogOut} className="font-semibold text-sm">Logout</button>
-            </> : <>
-            <li>
-            <NavLink
-                to="/login"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                Login
-            </NavLink>
-        </li>
-            </>
-        }
+        
     </div>
 
     return (
@@ -132,7 +115,24 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+            {
+            user ? <>
+                {/* <span>{user?.displayName}</span> */}
+            <img className="h-6 w-6 rounded-full m-2" src={user?.photoURL} alt="" />
+                <button onClick={handleLogOut} className="font-semibold text-sm">Logout</button>
+            </> : <>
+            
+            <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                }
+            >
+                Login
+            </NavLink>
+        
+            </>
+        }
             </div>
         </div>
     );

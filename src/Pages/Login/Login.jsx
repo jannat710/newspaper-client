@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const { signIn } = useAuth();
+    const { signIn,googleSignIn } = useAuth();
     const navigate =useNavigate();
     const location =useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -17,6 +17,13 @@ const Login = () => {
         loop: 1,
         onLoopDone: () => console.log(`loop completed after 3 runs.`)
       })
+
+      const handleGoogleLogin =()=>{
+        googleSignIn()
+        .then(result =>{
+            console.log(result.user);
+        })
+      }
 
     const handleLogin = e => {
         e.preventDefault();
@@ -51,7 +58,7 @@ const Login = () => {
                                 <span className="font-bold text-[#dc0003]"> {text}</span><Cursor/>
                                 </h1>
                             <div className="form-control">
-                                <button className="btn rounded-3xl bg-black text-white">
+                                <button onClick={handleGoogleLogin} className="btn rounded-3xl bg-black text-white">
                                     <img className="h-8" src={Google} alt="" />
                                     Sign in with Google
                                 </button>

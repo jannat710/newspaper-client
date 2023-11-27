@@ -5,11 +5,14 @@ import { useForm } from "react-hook-form";
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import useAuth from "../../hook/useAuth";
 import Swal from "sweetalert2";
+import useAxiosOpen from "../../hook/useAxiosOpen";
 
 
 const Register = () => {
+    const axiosOpen =useAxiosOpen();
     const { createUser, updateUserProfile, googleSignIn } = useAuth();
     const navigate = useNavigate();
+    const { register,reset, handleSubmit, formState: { errors } } = useForm();
 
 
 
@@ -25,7 +28,7 @@ const Register = () => {
         loop: 1,
         onLoopDone: () => console.log(`loop completed after 3 runs.`)
     })
-    const { register, handleSubmit, formState: { errors } } = useForm();
+
 
     const onSubmit = data => {
         console.log(data)
@@ -33,6 +36,33 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        console.log('user profile updated')
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email,
+                            photo:data.photoURL
+                        }
+                        axiosOpen.post('/users',userInfo)
+                        .then(res =>{
+                            if(res.data.insertedId){
+                                console.log('user added to the database');
+                                reset();
+                                Swal.fire({
+                                    position: "center",
+                                    icon: "success",
+                                    title: "User created successfully",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                  });
+        
+                                  navigate('/');
+                            }
+                        })
+                        
+                    })
+                    .catch(error => console.log(error))
             })
     }
 
