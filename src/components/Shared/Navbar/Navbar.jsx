@@ -16,7 +16,7 @@ const Navbar = () => {
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Home
@@ -26,7 +26,7 @@ const Navbar = () => {
             <NavLink
                 to="/addArticles"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Add Articles
@@ -36,7 +36,7 @@ const Navbar = () => {
             <NavLink
                 to="/allArticles"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 All Articles
@@ -46,7 +46,7 @@ const Navbar = () => {
             <NavLink
                 to="/subscription"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Subscription
@@ -56,7 +56,7 @@ const Navbar = () => {
             <NavLink
                 to="/dashboard"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Dashboard
@@ -66,7 +66,7 @@ const Navbar = () => {
             <NavLink
                 to="/myArticle"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 My Article
@@ -76,7 +76,7 @@ const Navbar = () => {
             <NavLink
                 to="/premiumArticle"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Premium Article
@@ -87,7 +87,7 @@ const Navbar = () => {
             <NavLink
                 to="/register"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Register
@@ -97,13 +97,13 @@ const Navbar = () => {
             user ? <>
                 {/* <span>{user?.displayName}</span>
             <img className="h-6 w-6 rounded-full" src={user?.photoURL} alt="" /> */}
-                <button onClick={handleLogOut} className="font-semibold text-base">Logout</button>
+                <button onClick={handleLogOut} className="font-semibold text-sm">Logout</button>
             </> : <>
             <li>
             <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
             >
                 Login

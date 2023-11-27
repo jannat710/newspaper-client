@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Google from '../../assets/icon/google.png'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import useAuth from "../../hook/useAuth";
@@ -8,6 +8,9 @@ import Swal from "sweetalert2";
 
 const Login = () => {
     const { signIn } = useAuth();
+    const navigate =useNavigate();
+    const location =useLocation();
+    const from = location.state?.from?.pathname || "/";
     //typewriter
     const [text] = useTypewriter({
         words: ['NewsFlash'],
@@ -32,6 +35,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate(from, { replace: true });
             })
     }
     return (
