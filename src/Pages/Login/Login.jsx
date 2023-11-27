@@ -4,12 +4,14 @@ import Google from '../../assets/icon/google.png'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import useAuth from "../../hook/useAuth";
 import Swal from "sweetalert2";
+import useAxiosOpen from "../../hook/useAxiosOpen";
 
 
 const Login = () => {
     const { signIn,googleSignIn } = useAuth();
     const navigate =useNavigate();
     const location =useLocation();
+    const axiosOpen =useAxiosOpen();
     const from = location.state?.from?.pathname || "/";
     //typewriter
     const [text] = useTypewriter({
@@ -22,6 +24,16 @@ const Login = () => {
         googleSignIn()
         .then(result =>{
             console.log(result.user);
+            const userInfo = {
+                email: result.user?.email,
+                name: result.user?.displayName,
+                photo:result.user?.photoURL
+            }
+            axiosOpen.post('/users', userInfo)
+            .then(res =>{
+                console.log(res.data);
+                navigate('/');
+            })
         })
       }
 
