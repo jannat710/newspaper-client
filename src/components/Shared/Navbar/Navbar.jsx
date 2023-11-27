@@ -1,7 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
+import useAuth from '../../../hook/useAuth';
 
 const Navbar = () => {
+    const { user,logOut } =useAuth()
+    //Logout
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
 
     const navlink = <div className="flex flex-col  md:flex-row lg:flex-row justify-center items-center">
         <li>
@@ -74,16 +82,7 @@ const Navbar = () => {
                 Premium Article
             </NavLink>
         </li>
-        <li>
-            <NavLink
-                to="/login"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
-                }
-            >
-                Login
-            </NavLink>
-        </li>
+        
         <li>
             <NavLink
                 to="/register"
@@ -94,6 +93,24 @@ const Navbar = () => {
                 Register
             </NavLink>
         </li>
+        {
+            user ? <>
+                {/* <span>{user?.displayName}</span>
+            <img className="h-6 w-6 rounded-full" src={user?.photoURL} alt="" /> */}
+                <button onClick={handleLogOut} className="font-semibold text-base">Logout</button>
+            </> : <>
+            <li>
+            <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-base " : "font-semibold text-base"
+                }
+            >
+                Login
+            </NavLink>
+        </li>
+            </>
+        }
     </div>
 
     return (
