@@ -9,6 +9,7 @@ import Dashboard from "../Layout/MainLayout/Dashboard";
 import MyArticle from "../Pages/Dashboard/MyArticle/MyArticle";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,13 @@ const router = createBrowserRouter([
                 path: 'myProfile',
                 element: <MyProfile></MyProfile>
             },
+
+
+            //admin
+            {
+                path: 'users',
+                element:<AllUsers></AllUsers>  
+            }
         ]
     }
 

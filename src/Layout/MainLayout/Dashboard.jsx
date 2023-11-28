@@ -18,7 +18,7 @@ const Dashboard = () => {
                                     Admin Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/allUsers" className={({ isActive, isPending }) =>
+                                <NavLink to="/dashboard/users" className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-white font-medium bg-[#dc0003]" : "font-medium"
                                 }>
                                     <FaUsers></FaUsers>
