@@ -8,6 +8,7 @@ import AllArticles from "../Pages/AllArticles/AllArticles";
 import Dashboard from "../Layout/MainLayout/Dashboard";
 import MyArticle from "../Pages/Dashboard/MyArticle/MyArticle";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
             {
                 path: 'myArticle',
                 element: <MyArticle></MyArticle>
-            }
+            },
+            {
+                path: 'myProfile',
+                element: <MyProfile></MyProfile>
+            },
         ]
     }
 

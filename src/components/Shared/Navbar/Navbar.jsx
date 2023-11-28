@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import useAuth from '../../../hook/useAuth';
 
@@ -118,7 +118,7 @@ const Navbar = () => {
             {
             user ? <>
                 {/* <span>{user?.displayName}</span> */}
-            <img className="h-6 w-6 rounded-full m-2" src={user?.photoURL} alt="" />
+            <Link to="/dashboard/myProfile"><img className="h-6 w-6 rounded-full m-2" src={user?.photoURL} alt="" /></Link>
                 <button onClick={handleLogOut} className="font-semibold text-sm">Logout</button>
             </> : <>
             

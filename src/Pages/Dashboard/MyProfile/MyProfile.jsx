@@ -1,14 +1,14 @@
 import SectionTitle from "../../../components/Shared/SectionTitle/SectionTitle";
 
 
-const MyArticle = () => {
+const MyProfile = () => {
     return (
         <div>
-            <SectionTitle heading='My Article'>
+            <SectionTitle heading='My Profile'>
             </SectionTitle>
             
         </div>
     );
 };
 
-export default MyArticle;
+export default MyProfile;
