@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             return unsubscribe();
         };
-    }, [])
+    }, [axiosOpen])
 
 
     const authentication = {
