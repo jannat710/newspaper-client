@@ -10,6 +10,7 @@ import MyArticle from "../Pages/Dashboard/MyArticle/MyArticle";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addArticles',
-                element: <AddArticles></AddArticles>
+                element: <PrivateRoute><AddArticles></AddArticles></PrivateRoute>,
             },
             {
                 path: '/allArticles',
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'myArticle',

@@ -37,25 +37,46 @@ const Login = () => {
         })
       }
 
+    // const handleLogin = e => {
+    //     e.preventDefault();
+    //     const form = e.target;
+    //     const email = form.email.value;
+    //     const password = form.password.value;
+    //     console.log(email, password);
+    //     signIn(email, password)
+    //         .then(result => {
+    //             const user = result.user;
+    //             console.log(user);
+    //             Swal.fire({
+    //                 position: "center",
+    //                 icon: "success",
+    //                 title: "User login successfully",
+    //                 showConfirmButton: false,
+    //                 timer: 1500
+    //               });
+    //               navigate(from, { replace: true });
+    //         })
+    // }
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        console.log(email, password)
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "User created successfully",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                  navigate(from, { replace: true });
+                Swal.fire("Good job!", "User logged in Successfully!", "success")
+                navigate(from, { replace: true });
             })
+            .catch(error => {
+                const user = error.user;
+                console.log(user);
+                Swal.fire('Error', 'Invalid!', 'error');
+            });
+
     }
     return (
         <div>
