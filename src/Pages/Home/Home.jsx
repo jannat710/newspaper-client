@@ -21,7 +21,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5001/news')
+        fetch('https://newspaper-server-three.vercel.app/news')
             .then(res => res.json())
             .then(data => {
                 setNews(data);

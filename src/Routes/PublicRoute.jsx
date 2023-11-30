@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddPublishers from "../Pages/Dashboard/AddPublishers";
 import About from "../Pages/Home/About";
 import AllArticles from "../Pages/Dashboard/AllArticles/AllArticles";
+import Subscription from "../Pages/Home/Subscription/Subscription";
 
 
 const router = createBrowserRouter([
@@ -35,8 +36,8 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
-                path: '/contact',
-                element: <About></About>
+                path:'/subscription',
+                element:<Subscription></Subscription>
             }
         ]
     },
