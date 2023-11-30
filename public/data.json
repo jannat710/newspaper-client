@@ -1,0 +1,32 @@
+[
+{
+    "image": "https://i.ibb.co/sgS6ZdS/fire.jpg",
+    "category":"latest",
+    "heading": "Breaking News: Fire Engulfs City Building",
+    "details": "Massive fire destroys historic building, firefighters battling the flames."
+  },
+  {
+    "image": "https://i.ibb.co/T0T9Pd3/sports.jpg",
+    "category":"sports",
+    "heading": "Sports Update: Team Wins Championship in Thrilling Final",
+    "details": "Underdogs secure victory with last-minute goal, fans celebrate in the streets."
+  },
+  {
+    "image": "https://i.ibb.co/CJWfvQz/entertainment.jpg",
+    "category":"Entertainment",
+    "heading": "Entertainment Buzz: Movie Star Set to Release New Blockbuster",
+    "details": "Highly anticipated film promises action, drama, and unforgettable performances."
+  },
+  {
+    "image": "https://i.ibb.co/t24J6Sk/Health-Wellness.jpg",
+    "category":"Health",
+    "heading": "Health & Wellness: Experts Share Tips for Better Sleep",
+    "details": "Discover the secrets to a restful night's sleep and wake up refreshed."
+  },
+  {
+    "image": "https://i.ibb.co/jz00s9z/Technology-Update.jpg",
+    "category":"Technology",
+    "heading": "Technology Update: New Gadgets Unveiled at Tech Expo",
+    "details": "Cutting-edge devices showcased, revolutionizing the way we live and work."
+  }
+]

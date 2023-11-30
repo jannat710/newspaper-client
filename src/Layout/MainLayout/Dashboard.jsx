@@ -1,9 +1,10 @@
 import { FaEnvelope, FaFileContract, FaHome, FaPhone, FaSearch, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../hook/useAdmin";
 
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-black text-white">

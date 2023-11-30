@@ -97,14 +97,14 @@ const AllUsers = () => {
                                 <th>
                                     { user.role==='admin' ?<button 
                                     
-                                    className="btn w-28 btn-ghost btn-sm text-[#B91C1C] bg-black">Admin</button> :<button 
+                                    className="btn w-28 btn-ghost btn-sm text-[#dc0003] bg-black">Admin</button> :<button 
                                     onClick={() =>handleMakeAdmin(user)}
-                                    className="btn w-28cz btn-ghost btn-sm bg-[#B91C1C] text-white">Make Admin</button>}
+                                    className="btn w-28cz btn-ghost btn-sm bg-[#dc0003] text-white">Make Admin</button>}
                                 </th>
                                 <td>
                                     <button
                                     onClick={() => handleDeleteUser(user)}
-                                        className="btn btn-ghost btn-sm bg-[#B91C1C]">
+                                        className="btn btn-ghost btn-sm bg-[#dc0003]">
                                         <FaTrashAlt className="text-white"></FaTrashAlt>
                                     </button>
                                 </td>
