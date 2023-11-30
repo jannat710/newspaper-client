@@ -18,9 +18,9 @@ import 'swiper/css/pagination';
 import { FreeMode, Pagination } from 'swiper/modules';
 
 const Banner = () => {
-    return (
-        <div>
-            <Swiper
+  return (
+    <div>
+      <Swiper
         slidesPerView={3}
         spaceBetween={30}
         freeMode={true}
@@ -36,9 +36,9 @@ const Banner = () => {
         <SwiperSlide><img className='h-[50vh] w-full mx-auto' src={slide4} alt="" /></SwiperSlide>
         <SwiperSlide><img className='h-[50vh] w-full mx-auto' src={slide5} alt="" /></SwiperSlide>
       </Swiper>
-            
-        </div>
-    );
+
+    </div>
+  );
 };
 
 export default Banner;

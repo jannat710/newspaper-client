@@ -4,24 +4,24 @@ import useAuth from '../../../hook/useAuth';
 import Swal from 'sweetalert2';
 
 const Navbar = () => {
-    const { user,logOut } =useAuth()
-    const navigate =useNavigate();
+    const { user, logOut } = useAuth()
+    const navigate = useNavigate();
     //Logout
     const handleLogOut = () => {
         logOut()
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            
-            
-        })
-            .catch(error =>
-                {const user = error.user;
-                 console.log(user)
-            Swal.fire("Success!", "Successfully logout user", "success")
-            navigate('/');
-        }
-            
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+
+
+            })
+            .catch(error => {
+                const user = error.user;
+                console.log(user)
+                Swal.fire("Success!", "Successfully logout user", "success")
+                navigate('/');
+            }
+
             );
     }
 
@@ -36,7 +36,7 @@ const Navbar = () => {
                 Home
             </NavLink>
         </li>
-        
+
         <li>
             <NavLink
                 to="/dashboard/allArticles"
@@ -47,60 +47,60 @@ const Navbar = () => {
                 All Articles
             </NavLink>
         </li>
-{
-    user?.email && (<div className='flex'>    
-    <li>
-            <NavLink
-                to="/addArticles"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                Add Articles
-            </NavLink>
-        </li>    
-    <li>
-        <NavLink
-            to="/subscription"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-            }
-        >
-            Subscription
-        </NavLink>
-    </li>
-    <li>
-        <NavLink
-            to="/dashboard"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-            }
-        >
-            Dashboard
-        </NavLink>
-    </li>
-    <li>
-        <NavLink
-            to="/dashboard/myArticle"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-            }
-        >
-            My Article
-        </NavLink>
-    </li> 
-    <li>
-        <NavLink
-            to="/premiumArticle"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-            }
-        >
-            Premium Article
-        </NavLink>
-    </li></div>)
-}
-        
+        {
+            user?.email && (<div className='flex'>
+                <li>
+                    <NavLink
+                        to="/addArticles"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                        }
+                    >
+                        Add Articles
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/subscription"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                        }
+                    >
+                        Subscription
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/dashboard"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                        }
+                    >
+                        Dashboard
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/dashboard/myArticle"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                        }
+                    >
+                        My Article
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/premiumArticle"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                        }
+                    >
+                        Premium Article
+                    </NavLink>
+                </li></div>)
+        }
+
         <li>
             <NavLink
                 to="/register"
@@ -111,7 +111,7 @@ const Navbar = () => {
                 Register
             </NavLink>
         </li>
-        
+
     </div>
 
     return (
@@ -133,24 +133,24 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            {
-            user ? <>
-                {/* <span>{user?.displayName}</span> */}
-            <Link to="/dashboard/myProfile"><img className="h-6 w-6 rounded-full m-2" src={user?.photoURL} alt="" /></Link>
-                <button onClick={handleLogOut} className="font-semibold text-sm">Logout</button>
-            </> : <>
-            
-            <NavLink
-                to="/login"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                {
+                    user ? <>
+                        {/* <span>{user?.displayName}</span> */}
+                        <Link to="/dashboard/myProfile"><img className="h-6 w-6 rounded-full m-2" src={user?.photoURL} alt="" /></Link>
+                        <button onClick={handleLogOut} className="font-semibold text-sm">Logout</button>
+                    </> : <>
+
+                        <NavLink
+                            to="/login"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                            }
+                        >
+                            Login
+                        </NavLink>
+
+                    </>
                 }
-            >
-                Login
-            </NavLink>
-        
-            </>
-        }
             </div>
         </div>
     );

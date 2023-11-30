@@ -9,17 +9,30 @@ import useAxiosOpen from "../../hook/useAxiosOpen";
 
 
 const Register = () => {
-    const axiosOpen =useAxiosOpen();
+    const axiosOpen = useAxiosOpen();
     const { createUser, updateUserProfile, googleSignIn } = useAuth();
     const navigate = useNavigate();
-    const { register,reset, handleSubmit, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
 
 
     //Google
-    
-
-
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user);
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName,
+                    photo: result.user?.photoURL
+                }
+                axiosOpen.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate('/');
+                    })
+            })
+    }
 
 
     //typewriter
@@ -42,25 +55,25 @@ const Register = () => {
                         const userInfo = {
                             name: data.name,
                             email: data.email,
-                            photo:data.photoURL
+                            photo: data.photoURL
                         }
-                        axiosOpen.post('/users',userInfo)
-                        .then(res =>{
-                            if(res.data.insertedId){
-                                console.log('user added to the database');
-                                reset();
-                                Swal.fire({
-                                    position: "center",
-                                    icon: "success",
-                                    title: "User created successfully",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                  });
-        
-                                  navigate('/');
-                            }
-                        })
-                        
+                        axiosOpen.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database');
+                                    reset();
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "success",
+                                        title: "User created successfully",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+
+                                    navigate('/');
+                                }
+                            })
+
                     })
                     .catch(error => console.log(error))
             })
@@ -75,17 +88,17 @@ const Register = () => {
                 <div className="flex-col max-w-2xl md:flex-row-reverse">
                     <div className=" ">
                         <div className="w-96 px-8">
-                        <h1 className="py-8 text-2xl font-bold">Sign up to
-                            <span className="font-bold text-[#dc0003]"> {text}</span><Cursor />
-                        </h1>
-                        <div className="form-control">
-                            <button className="btn rounded-3xl bg-black text-white">
-                                <img className="h-8" src={Google} alt="" />
-                                Sign in with Google
-                            </button>
+                            <h1 className="py-8 text-2xl font-bold">Sign up to
+                                <span className="font-bold text-[#dc0003]"> {text}</span><Cursor />
+                            </h1>
+                            <div className="form-control">
+                                <button onClick={handleGoogleLogin} className="btn rounded-3xl bg-black text-white">
+                                    <img className="h-8" src={Google} alt="" />
+                                    Sign in with Google
+                                </button>
 
-                            <p className="text-center text-sm pt-5 divider text-[#6e6d7a]">or sign up with email</p>
-                        </div>
+                                <p className="text-center text-sm pt-5 divider text-[#6e6d7a]">or sign up with email</p>
+                            </div>
                         </div>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body w-96">
 

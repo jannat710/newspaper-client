@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const AllUsers = () => {
     const axiosSecure = useAxiosSecure();
-    const { data: users = [],refetch } = useQuery({
+    const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const result = await axiosSecure.get('/users');
@@ -17,21 +17,21 @@ const AllUsers = () => {
     })
 
     //Make Admin 
-    const handleMakeAdmin = user =>{
+    const handleMakeAdmin = user => {
         axiosSecure.patch(`/users/admin/${user._id}`)
-        .then(res => {
-            if (res.data.modifiedCount > 0) {
-                refetch();
-                Swal.fire({
-                    title: "Congratulations!",
-                    text: `${user.name} is an Admin Now!`,
-                    icon: "success"
-                  });
-            }
-        })
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: `${user.name} is an Admin Now!`,
+                        icon: "success"
+                    });
+                }
+            })
 
     }
-    const handleDeleteUser =user =>{
+    const handleDeleteUser = user => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -66,7 +66,7 @@ const AllUsers = () => {
             </SectionTitle>
             <div>
                 <h2 className="text-3xl py-4">Total Users: {users.length}</h2>
-                
+
             </div>
 
             <div className="overflow-x-auto">
@@ -84,7 +84,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user,index) => <tr key={user._id}>
+                            users.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
                                 <td>
                                     <div className="flex items-center gap-3">
@@ -93,21 +93,21 @@ const AllUsers = () => {
                                                 <img src={user.photo} />
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <th>
-                                    { user.role==='admin' ?<button 
-                                    
-                                    className="btn w-28 btn-ghost btn-sm text-[#dc0003] bg-black">Admin</button> :<button 
-                                    onClick={() =>handleMakeAdmin(user)}
-                                    className="btn w-28cz btn-ghost btn-sm bg-[#dc0003] text-white">Make Admin</button>}
+                                    {user.role === 'admin' ? <button
+
+                                        className="btn w-28 btn-ghost btn-sm text-[#dc0003] bg-black">Admin</button> : <button
+                                            onClick={() => handleMakeAdmin(user)}
+                                            className="btn w-28cz btn-ghost btn-sm bg-[#dc0003] text-white">Make Admin</button>}
                                 </th>
                                 <td>
                                     <button
-                                    onClick={() => handleDeleteUser(user)}
+                                        onClick={() => handleDeleteUser(user)}
                                         className="btn btn-ghost btn-sm bg-[#dc0003]">
                                         <FaTrashAlt className="text-white"></FaTrashAlt>
                                     </button>

@@ -8,7 +8,7 @@ const News = ({ item }) => {
             <img className="h-16 w-16 rounded-full" src={image} alt="Article Image" />
             <div className="pl-2">
                 <button className="text-center rounded-sm text-xs bg-[#dc0003] text-white p-1">{category}</button>
-                
+
                 <h2 className="font-bold text-sm">{heading.length > 25 ? (
                     <p>
                         {heading.slice(0, 25)}{" "}

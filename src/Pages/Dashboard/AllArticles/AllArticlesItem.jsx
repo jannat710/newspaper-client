@@ -8,7 +8,7 @@ const AllArticlesItem = ({ item }) => {
             <div className="card w-96 bg-base-100 border shadow-xl">
 
                 <div className="card-body">
-                    
+
                     <img className="w-full mx-auto h-44" src={authorPhoto} alt="" />
                     <h2 className="card-title h-12">Title : {articleTitle}</h2>
                     <p>Author Name : {authorName}</p>

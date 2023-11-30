@@ -7,7 +7,7 @@ import AllArticlesItem from "./AllArticlesItem";
 
 const AllArticles = () => {
     const axiosSecure = useAxiosSecure();
-    const { data: articles = [],} = useQuery({
+    const { data: articles = [], } = useQuery({
         queryKey: ['articles'],
         queryFn: async () => {
             const res = await axiosSecure.get('/articles');
@@ -16,7 +16,7 @@ const AllArticles = () => {
     })
     return (
 
-            <div>
+        <div>
             <Helmet>
                 <title>NewsFlash | All Articles</title>
             </Helmet>
@@ -25,13 +25,13 @@ const AllArticles = () => {
             <div>
                 <h1 className="text-3xl py-4 pl-10">Total Article:{articles.length}</h1>
                 <div className="grid md:grid-cols-2 gap-10">
-            {
-                    articles.map(item => <AllArticlesItem
-                        key={item._id}
-                        item={item}
-                    ></AllArticlesItem>)
-                }
-            </div>
+                    {
+                        articles.map(item => <AllArticlesItem
+                            key={item._id}
+                            item={item}
+                        ></AllArticlesItem>)
+                    }
+                </div>
 
 
             </div>

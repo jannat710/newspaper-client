@@ -20,9 +20,6 @@ const Home = () => {
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
-
-
     useEffect(() => {
         fetch('http://localhost:5001/news')
             .then(res => res.json())
@@ -37,11 +34,6 @@ const Home = () => {
             <Helmet>
                 <title>NewsFlash | Home</title>
             </Helmet>
-           
-           
-
-            
-
 
             <BreakingNews></BreakingNews>
             <Banner></Banner>
@@ -58,7 +50,6 @@ const Home = () => {
             <AllPublisher></AllPublisher>
             <Plans></Plans>
             <Statistic></Statistic>
-            
 
         </div>
     );

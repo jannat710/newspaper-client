@@ -10,7 +10,7 @@ const MyArticle = () => {
             </Helmet>
             <SectionTitle heading='My Article'>
             </SectionTitle>
-            
+
         </div>
     );
 };

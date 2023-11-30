@@ -11,10 +11,10 @@ const AddPublishers = () => {
             <SectionTitle heading='Add Publishers'>
             </SectionTitle>
             <div>
-                
-                
+
+
             </div>
-            
+
         </div>
     );
 };
