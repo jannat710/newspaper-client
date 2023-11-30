@@ -36,19 +36,10 @@ const Navbar = () => {
                 Home
             </NavLink>
         </li>
+        
         <li>
             <NavLink
-                to="/addArticles"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                Add Articles
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/allArticles"
+                to="/dashboard/allArticles"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
                 }
@@ -57,7 +48,18 @@ const Navbar = () => {
             </NavLink>
         </li>
 {
-    user?.email && (<div className='flex'>        <li>
+    user?.email && (<div className='flex'>    
+    <li>
+            <NavLink
+                to="/addArticles"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+                }
+            >
+                Add Articles
+            </NavLink>
+        </li>    
+    <li>
         <NavLink
             to="/subscription"
             className={({ isActive, isPending }) =>

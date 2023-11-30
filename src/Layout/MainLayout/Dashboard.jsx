@@ -1,6 +1,7 @@
-import { FaEnvelope, FaFileContract, FaHome, FaPhone, FaSearch, FaUsers } from "react-icons/fa";
+import { FaEnvelope, FaHome, FaPhone, FaUserCheck, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hook/useAdmin";
+import { MdOutlineArticle } from "react-icons/md";
 
 
 const Dashboard = () => {
@@ -29,14 +30,14 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/allArticles" className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-white font-medium bg-[#dc0003]" : "font-medium"
                                 }>
-                                    <FaUsers></FaUsers>
+                                    <MdOutlineArticle />
                                     All Articles</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/addPublishers" className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-white font-medium bg-[#dc0003]" : "font-medium"
                                 }>
-                                    <FaHome></FaHome>
+                                    <FaUserCheck></FaUserCheck>
                                     Add Publishers</NavLink>
                             </li>
                         </>
@@ -53,14 +54,14 @@ const Dashboard = () => {
                                     <NavLink to="/dashboard/myArticle" className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "text-white font-medium bg-[#dc0003]" : "font-medium"
                                     }>
-                                        <FaHome></FaHome>
+                                        <MdOutlineArticle />
                                         My Article</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/myProfile" className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "text-white font-medium bg-[#dc0003]" : "font-medium"
                                     }>
-                                        <FaHome></FaHome>
+                                        <FaUsers></FaUsers>
                                         My Profile</NavLink>
                                 </li>
                             </>

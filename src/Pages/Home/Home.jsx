@@ -7,6 +7,8 @@ import News from "./MoreFeature/News";
 import Marquee from "react-fast-marquee";
 import BreakingNews from "./MoreFeature/breakingNews";
 import Banner from "./Banner";
+import { Helmet } from "react-helmet-async";
+
 
 
 
@@ -32,6 +34,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>NewsFlash | Home</title>
+            </Helmet>
            
            
 
@@ -53,6 +58,7 @@ const Home = () => {
             <AllPublisher></AllPublisher>
             <Plans></Plans>
             <Statistic></Statistic>
+            
 
         </div>
     );

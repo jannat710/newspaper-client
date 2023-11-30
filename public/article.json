@@ -1,0 +1,193 @@
+[
+   
+    {
+        "articleTitle": "The Importance of Fake Data in Testing",
+        "authorName": "John Smith",
+        "authorEmail": "john.smith@example.com",
+        "authorPhoto": "https://i.ibb.co/GT4wWyc/p2.jpg",
+        "postedDate": "2022-01-01",
+        "status": "published",
+        "publisher": "Tech News"
+    },
+    {
+        "articleTitle": "10 Tips for Generating Realistic Fake Data",
+        "authorName": "Jane Doe",
+        "authorEmail": "jane.doe@example.com",
+        "authorPhoto": "https://i.ibb.co/qjGwJk8/p3.jpg",
+        "postedDate": "2022-01-05",
+        "status": "draft",
+        "publisher": "Data Science Today"
+    },
+    {
+        "articleTitle": "Using Fake Data to Improve Data Quality",
+        "authorName": "David Johnson",
+        "authorEmail": "david.johnson@example.com",
+        "authorPhoto": "https://i.ibb.co/g69z9yZ/p4.jpg",
+        "postedDate": "2022-01-10",
+        "status": "published",
+        "publisher": "Data Quality Journal"
+    },
+    {
+        "articleTitle": "Exploring the Wonders of Nature",
+        "authorName": "John Smith",
+        "authorEmail": "john.smith@example.com",
+        "authorPhoto": "https://i.ibb.co/YWrKgyL/p5.jpg",
+        "postedDate": "2023-11-29",
+        "status": "Published",
+        "publisher": "Nature Magazine"
+    },
+    {
+        "articleTitle": "The Art of Cooking",
+        "authorName": "Emily Johnson",
+        "authorEmail": "emily.johnson@example.com",
+        "authorPhoto": " https://i.ibb.co/pK8d8Lp/pp1.jpg",
+        "postedDate": "2023-11-28",
+        "status": "Published",
+        "publisher": "Foodie Times"
+    },
+    {
+        "articleTitle": "Traveling Through Time",
+        "authorName": "Alex Rodriguez",
+        "authorEmail": "alex.rodriguez@example.com",
+        "authorPhoto": "https://i.ibb.co/qFy493c/pp2.jpg",
+        "postedDate": "2023-11-27",
+        "status": "Draft",
+        "publisher": "Time Traveler's Digest"
+    },
+    {
+        "articleTitle": "Unleashing Your Creativity",
+        "authorName": "Emma Thompson",
+        "authorEmail": "emma.thompson@example.com",
+        "authorPhoto": "https://i.ibb.co/z2vqFB8/pp4.jpg",
+        "postedDate": "2023-11-26",
+        "status": "Published",
+        "publisher": "Creative Living"
+    },
+    {
+        "articleTitle": "The Power of Meditation",
+        "authorName": "Michael Davis",
+        "authorEmail": "michael.davis@example.com",
+        "authorPhoto": "https://i.ibb.co/TBvnfLv/pp3.jpg",
+        "postedDate": "2023-11-25",
+        "status": "Published",
+        "publisher": "Mindful Magazine"
+    },
+    {
+        "articleTitle": "Exploring the Universe",
+        "authorName": "Sophia Lee",
+        "authorEmail": "sophia.lee@example.com",
+        "authorPhoto": "https://i.ibb.co/b67zNVd/pp5.jpg",
+        "postedDate": "2023-11-25",
+        "status": "Published",
+        "publisher": "Mindful Thing"
+    },
+    {
+        "articleTitle": "Exploring the Universe World",
+        "authorName": "Maria Dee",
+        "authorEmail": "maria.dee@example.com",
+        "authorPhoto": "https://i.ibb.co/6nLndbJ/pic1.jpg",
+        "postedDate": "2023-10-25",
+        "status": "Published",
+        "publisher": "Charming World"
+    },
+    {
+        "articleTitle": "The Art of Storytelling",
+        "authorName": "Sadia Sultana",
+        "authorEmail": "sadia@example.com",
+        "authorPhoto": "https://i.ibb.co/mCtzfgn/photo-2023-07-07-19-12-51.jpg",
+        "postedDate": "2023-02-25",
+        "status": "Published",
+        "publisher": "Creative Writing Magazine"
+    },
+    {
+        "articleTitle": "Exploring the Wonders of Nature Beauty",
+        "authorName": "Amber Lee",
+        "authorEmail": "amber.lee@example.com",
+        "authorPhoto": "https://i.ibb.co/ctx18Pb/photo-2023-07-07-19-11-23.jpg",
+        "postedDate": "2023-03-25",
+        "status": "Published",
+        "publisher": "Outdoor Adventures"
+    },
+    {
+        "articleTitle": "Unleashing Your Inner Chef 2",
+        "authorName": "Amber Emi",
+        "authorEmail": "amber.emi@example.com",
+        "authorPhoto": "https://example.com/sophia-lee.jpg",
+        "postedDate": "2023-04-25",
+        "status": "Draft",
+        "publisher": "Gourmet Delights"
+    },
+    {
+        "articleTitle": "The Science Behind Dreams",
+        "authorName": "Ema Emi",
+        "authorEmail": "ema.emi@example.com",
+        "authorPhoto": "https://i.ibb.co/b67zNVd/pp5.jpg",
+        "postedDate": "2023-05-25",
+        "status": "Draft",
+        "publisher": "Psychology Today"
+    },
+    {
+        "articleTitle": "Mastering the Stock Market",
+        "authorName": "Era Shy",
+        "authorEmail": "era.shy@example.com",
+        "authorPhoto": "https://i.ibb.co/vmKqrQt/photo-2023-03-13-21-20-25.jpg",
+        "postedDate": "2023-06-25",
+        "status": "Draft",
+        "publisher": "Financial Times"
+    },
+    {
+        "articleTitle": "Discovering Hidden Gems in the City",
+        "authorName": "Sari",
+        "authorEmail": "sari@example.com",
+        "authorPhoto": "https://i.ibb.co/b67zNVd/pp5.jpg",
+        "postedDate": "2023-07-25",
+        "status": "Published",
+        "publisher": "Urban Explorers"
+    },
+    {
+        "articleTitle": "The Secrets of Successful Entrepreneurs",
+        "authorName": "Shirin Shaha",
+        "authorEmail": "shirin.saha@example.com",
+        "authorPhoto": "https://i.ibb.co/MBLnStv/photo-2023-07-07-19-11-22.jpg",
+        "postedDate": "2023-08-25",
+        "status": "Published",
+        "publisher": "Business Insider"
+    },
+
+    {
+        "articleTitle": "The World of Fashion Trends",
+        "authorName": "Ananya Pande",
+        "authorEmail": "ananya.pande@example.com",
+        "authorPhoto": "https://i.ibb.co/J2k2XRY/photo-2023-03-04-14-08-54.jpg",
+        "postedDate": "2023-13-25",
+        "status": "Published",
+        "publisher": "Vogue"
+    },
+    {
+        "articleTitle": "Exploring the History of Ancient Civilizations",
+        "authorName": "Ananya Puddar",
+        "authorEmail": "ananya.puddar@example.com",
+        "authorPhoto": "https://i.ibb.co/L5hJNNQ/f1.jpg",
+        "postedDate": "2023-14-25",
+        "status": "Published",
+        "publisher": "National Geographic"
+    },
+    {
+        "articleTitle": "Unlocking the Power of Meditation",
+        "authorName": "Ayan Puddar",
+        "authorEmail": "ayan.puddar@example.com",
+        "authorPhoto": "https://i.ibb.co/1KZqvRD/p1.jpg",
+        "postedDate": "2023-15-25",
+        "status": "Draft",
+        "publisher": "Mindful Living"
+    }
+
+]
+
+
+
+
+
+
+
+

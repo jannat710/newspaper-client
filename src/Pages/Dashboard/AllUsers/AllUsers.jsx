@@ -3,6 +3,7 @@ import SectionTitle from "../../../components/Shared/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const AllUsers = () => {
@@ -58,6 +59,9 @@ const AllUsers = () => {
     }
     return (
         <div className="p-8">
+            <Helmet>
+                <title>NewsFlash | All Users</title>
+            </Helmet>
             <SectionTitle heading='All Users'>
             </SectionTitle>
             <div>

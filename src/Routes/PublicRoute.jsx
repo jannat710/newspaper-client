@@ -4,13 +4,16 @@ import Home from "../Pages/Home/Home";
 import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
 import AddArticles from "../Pages/AddArticles/AddArticles";
-import AllArticles from "../Pages/AllArticles/AllArticles";
 import Dashboard from "../Layout/MainLayout/Dashboard";
 import MyArticle from "../Pages/Dashboard/MyArticle/MyArticle";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
+
+import AddPublishers from "../Pages/Dashboard/AddPublishers";
+import About from "../Pages/Home/About";
+import AllArticles from "../Pages/Dashboard/AllArticles/AllArticles";
 
 
 const router = createBrowserRouter([
@@ -28,8 +31,12 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddArticles></AddArticles></PrivateRoute>,
             },
             {
-                path: '/allArticles',
-                element: <AllArticles></AllArticles>
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/contact',
+                element: <About></About>
             }
         ]
     },
@@ -59,6 +66,14 @@ const router = createBrowserRouter([
             {
                 path: 'users',
                 element:<AllUsers></AllUsers>  
+            },
+            {
+                path: 'allArticles',
+                element:<AllArticles></AllArticles>
+            },
+            {
+                path: 'addPublishers',
+                element:<AddPublishers></AddPublishers> 
             }
         ]
     }
