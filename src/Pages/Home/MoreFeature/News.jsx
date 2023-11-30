@@ -4,7 +4,7 @@ const News = ({ item }) => {
     const { _id, category, image, heading, details } = item;
     return (
 
-        <div className="my-2 shadow-xl w-96 flex justify-center items-center p-2 ">
+        <div className="my-2 shadow-xl w-80 flex justify-center items-center p-2 ">
             <img className="h-16 w-16 rounded-full" src={image} alt="Article Image" />
             <div className="pl-2">
                 <button className="text-center rounded-sm text-xs bg-[#dc0003] text-white p-1">{category}</button>

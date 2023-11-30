@@ -16,7 +16,7 @@ const BreakingNews = () => {
             <h1 className="py-8 text-sm flex justify-start gap-4 items-center">
                 <Time></Time>
                 <div className='bg-[#dc0003] text-white p-1 rounded-sm ml-10'>Breaking :</div>
-                <span className="font-normal text-sm"> {text}</span><Cursor/>
+                <span className="font-medium text-sm"> {text}</span><Cursor/>
             </h1>
 
         </div>

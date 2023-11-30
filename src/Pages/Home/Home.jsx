@@ -6,11 +6,21 @@ import TrendingArticles from "./TrendingArticles";
 import News from "./MoreFeature/News";
 import Marquee from "react-fast-marquee";
 import BreakingNews from "./MoreFeature/breakingNews";
+import Banner from "./Banner";
+
+
+
 
 
 const Home = () => {
-        const [news, setNews] = useState([]);
+
+
+    const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
+
+
+
+
     useEffect(() => {
         fetch('http://localhost:5001/news')
             .then(res => res.json())
@@ -19,24 +29,31 @@ const Home = () => {
                 setLoading(false);
             });
     }, [])
-    
+
     return (
         <div>
-            <BreakingNews></BreakingNews>
+           
+           
+
             
+
+
+            <BreakingNews></BreakingNews>
+            <Banner></Banner>
+
             <div className="flex p-7">
-            <Marquee direction="left" speed={70} pauseOnHover={true} gradient={true}>
-            {
-                news.map(item => <News
-                key={item._id} item={item}></News>)
-            }
-            </Marquee>
+                <Marquee direction="left" speed={70} pauseOnHover={true} gradient={true}>
+                    {
+                        news.map(item => <News
+                            key={item._id} item={item}></News>)
+                    }
+                </Marquee>
             </div>
             <TrendingArticles></TrendingArticles>
             <AllPublisher></AllPublisher>
             <Plans></Plans>
             <Statistic></Statistic>
-            
+
         </div>
     );
 };

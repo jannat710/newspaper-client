@@ -1,14 +1,28 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import useAuth from '../../../hook/useAuth';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { user,logOut } =useAuth()
+    const navigate =useNavigate();
     //Logout
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
-            .catch(error => console.log(error));
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            
+            
+        })
+            .catch(error =>
+                {const user = error.user;
+                 console.log(user)
+            Swal.fire("Success!", "Successfully logout user", "success")
+            navigate('/');
+        }
+            
+            );
     }
 
     const navlink = <div className="flex flex-col  md:flex-row lg:flex-row justify-center items-center">
@@ -42,46 +56,48 @@ const Navbar = () => {
                 All Articles
             </NavLink>
         </li>
-        <li>
-            <NavLink
-                to="/subscription"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                Subscription
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/dashboard"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                Dashboard
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/dashboard/myArticle"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                My Article
-            </NavLink>
-        </li> 
-        <li>
-            <NavLink
-                to="/premiumArticle"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
-                }
-            >
-                Premium Article
-            </NavLink>
-        </li>
+{
+    user?.email && (<div className='flex'>        <li>
+        <NavLink
+            to="/subscription"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+            }
+        >
+            Subscription
+        </NavLink>
+    </li>
+    <li>
+        <NavLink
+            to="/dashboard"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+            }
+        >
+            Dashboard
+        </NavLink>
+    </li>
+    <li>
+        <NavLink
+            to="/dashboard/myArticle"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+            }
+        >
+            My Article
+        </NavLink>
+    </li> 
+    <li>
+        <NavLink
+            to="/premiumArticle"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#dc0003] font-semibold text-sm " : "font-semibold text-sm"
+            }
+        >
+            Premium Article
+        </NavLink>
+    </li></div>)
+}
         
         <li>
             <NavLink

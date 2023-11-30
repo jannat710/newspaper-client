@@ -74,7 +74,7 @@ const Login = () => {
             .catch(error => {
                 const user = error.user;
                 console.log(user);
-                Swal.fire('Error', 'Invalid!', 'error');
+                Swal.fire('Error', 'Invalid!', 'Login failed');
             });
 
     }
