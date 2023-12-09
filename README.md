@@ -7,7 +7,8 @@ mongodb etc.
 - Seperate dashboard layout for user and admin .
 
 - Used sweet alerts on all the crud operation ,login,logout success or error messages .
--This website is more user friendly and easy to use .
+
+- This website is more user friendly and easy to use .
 
 
-Live site Link:
+Live site Link:https://news-flash-3cb70.web.app/
