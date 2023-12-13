@@ -8,7 +8,13 @@ mongodb etc.
 
 - Used sweet alerts on all the crud operation ,login,logout success or error messages .
 
+- Attractive view gallery section using react marquee slider.
+
 - This website is more user friendly and easy to use .
+
+### Unique Feature: 
+- Breaking News section
+- Attractive view gallery
 
 
 Live site Link:https://news-flash-3cb70.web.app/
